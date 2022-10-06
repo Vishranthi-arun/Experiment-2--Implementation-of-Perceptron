@@ -9,17 +9,24 @@ Anaconda – Python 3.7 Installation / Google Colab /Jupiter Notebook
 
 ## RELATED THEORETICAL CONCEPT:
 1. A Perceptron is a basic learning algorithm invented in 1959 by Frank Rosenblatt. It is meant to mimic the working logic of a biological neuron. The human brain is basically a collection of many interconnected neurons. Each one receives a set of inputs, applies some sort of computation on them and propagates the result to other neurons.
+
 2.A Perceptron is an algorithm used for supervised learning of binary classifiers.Given a sample, the neuron classifies it by assigning a weight to its features. To accomplish this a Perceptron undergoes two phases: training and testing. During training phase weights are initialized to an arbitrary value. Perceptron is then asked to evaluate a sample and compare its decision with the actual class of the sample.If the algorithm chose the wrong class weights are adjusted to better match that particular sample. This process is repeated over and over to finely optimize the biases. After that, the algorithm is ready to be tested against a new set of completely unknown samples to evaluate if the trained model is general enough to cope with real-world samples.
+
 3.The important Key points to be focused to implement a perceptron:
+
 4.Models have to be trained with a high number of already classified samples. It is difficult to know a priori this number: a few dozen may be enough in very simple cases while in others thousands or more are needed.
+
 5.Data is almost never perfect: a preprocessing phase has to take care of missing features, uncorrelated data and, as we are going to see soon, scaling.
+
 6.Perceptron requires linearly separable samples to achieve convergence.
+
 ## The math of Perceptron
-1.If we represent samples as vectors of size n, where ‘n’ is the number of its features, a Perceptron can be modeled through the composition of two functions. The first one 
-f(x) maps the input features  ‘x’  vector to a scalar value, shifted by a bias ‘b’
+1.If we represent samples as vectors of size n, where ‘n’ is the number of its features, a Perceptron can be modeled through the composition of two functions. The first one f(x) maps the input features  ‘x’  vector to a scalar value, shifted by a bias ‘b’
+
 ![formula2](https://user-images.githubusercontent.com/93427278/194217593-e55cd437-d05a-49a1-bd8e-9c7f0683cc1b.png)
 
 2.A threshold function, usually Heaviside or sign functions, maps the scalar value to a binary output:
+
 ![formula1](https://user-images.githubusercontent.com/93427278/194217615-17295286-13ce-4b2c-9792-8be20407af71.png)
 
 3.Indeed if the neuron output is exactly zero it cannot be assumed that the sample belongs to the first sample since it lies on the boundary between the two classes. Nonetheless for the sake of simplicity,ignore this situation.
@@ -33,6 +40,7 @@ f(x) maps the input features  ‘x’  vector to a scalar value, shifted by a bi
 3.Plot the data to verify the linear separable dataset and consider only two classes
 
 4.Convert the data set to scale the data to uniform range by using Feature scaling
+
 ![formula3](https://user-images.githubusercontent.com/93427278/194217667-675c321f-d6f9-4796-95be-cbe922bf1df1.png)
 
 5.Split the dataset for training and testing
@@ -46,6 +54,7 @@ f(x) maps the input features  ‘x’  vector to a scalar value, shifted by a bi
 9.Assign the learning rate
 
 10.For ‘N ‘ iterations ,do the following:
+
 ![formula4](https://user-images.githubusercontent.com/93427278/194217735-f4316710-589e-47fe-9710-b28edbb17aee.png)
 
 11.Plot the error for each iteration 
